@@ -4,13 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev:start": "webpack-dev-server --open --mode development",
-    "clean": "rm -rf dist",
-    "build": "webpack --mode production",
-    "prod:build": "yarn clean && yarn build",
-    "prod:start": "yarn prod:build && node src/server.js",
-    "prod:deploy": "yarn prod:build && pm2 start --name 'prod:appname' src/server.js",
-    "prod:restart": "yarn prod:build && pm2 restart 'prod:appname'"
+    "client:start": "webpack-dev-server --open --mode development",
+    "client:clean": "rm -rf dist",
+    "client:build": "webpack --mode production",
+    "app:build": "yarn client:clean && yarn client:build",
+    "dev:deploy": "yarn app:build && node src/server.js",
+    "prod:deploy": "yarn app:build && pm2 start --name 'prod:appname' src/server.js",
+    "prod:restart": "yarn app:build && pm2 restart 'prod:appname'"
   },
   "author": "Rodrick Alcantara",
   "license": "ISC",

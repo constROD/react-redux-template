@@ -7,12 +7,12 @@ const fs = require('fs')
 const CONFIG = require('./config/App')
 
 /* Middleware */
-app.use(express.static(path.join(__dirname, '../dist')))
+app.use(express.static(path.join(__dirname, '../client_build')))
 
 /* Route for Client */
 app.get('*', (req, res, next) => {
   res.setHeader('Content-Type', 'text/html')
-  res.sendFile(path.join(__dirname, '../dist/index.html'))
+  res.sendFile(path.join(__dirname, '../client_build/index.html'))
 })
 
 if (CONFIG.APP_ZONE === 'production') {
