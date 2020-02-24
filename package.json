@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "client:start": "webpack-dev-server --open --mode development",
-    "client:clean": "rm -rf dist",
+    "client:clean": "rm -rf client_build",
     "client:build": "webpack --mode production",
     "app:build": "yarn client:clean && yarn client:build",
     "dev:deploy": "yarn app:build && node src/server.js",
